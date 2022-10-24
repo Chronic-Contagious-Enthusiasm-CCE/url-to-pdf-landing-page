@@ -5,7 +5,7 @@ sort_by = "weight"
 
 # How to make an API request
 
-URL: `api.pdfy.ml/render`
+URL: `pdfyml.herokuapp.com/render`
 <pre><code>{
 	"url": "https://www.google.com",
 	"landscape": true,                  // optional, default: false
