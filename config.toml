@@ -18,7 +18,7 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 juice_logo_path = "juice.svg"
-juice_logo_name = "PDFy.ml"
+juice_logo_name = "PrintMyPDF.org"
 repository_url = ""
 juice_extra_menu = [
 {"link"="asds","title"="helloworld"}
