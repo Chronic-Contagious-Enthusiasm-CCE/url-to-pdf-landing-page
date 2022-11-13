@@ -27,6 +27,7 @@
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
+    <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('3P1w24drjKl8mY5n'); </script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M91VTJVK5K"></script>
@@ -54,6 +55,8 @@
         </h1>
         <h3 class="title-text">
             Try it now
+            <div class="lds-ring" id="loader"><small style="font-size: 1rem;">Will take a few moments...</small><div></div><div></div><div></div><div></div></div>
+
         </h3>
         <div>
             <!-- Load icon library -->
@@ -61,13 +64,22 @@
 
 
             <!-- The form -->
-                <input type="text" placeholder="https://www.google.com" id="urlinput">
-                <button type="submit" id="post-btn"><i class="fa fa-arrow-right"></i></button>
+                <input type="text" value="https://www.google.com" id="urlinput" style="height: 2rem;
+    width: 20rem;border-radius:5px">
+                <button type="submit" id="post-btn" style="height: 2.5rem;
+    width: 3rem;border-radius:5px"><i class="fa fa-arrow-right"></i></button>
             <script>
                 const button = document.getElementById('post-btn');
 
+
+
                 button.addEventListener('click', async _ => {
                     console.log(document.getElementById('urlinput').value)
+                    // start here
+
+                    const loader = document.getElementById('loader');
+
+                    loader.style.display = 'block';
 
                     try {
                         var myHeaders = new Headers();
@@ -88,11 +100,28 @@
                             .then( res => res.blob() )
                             .then( blob => {
                                 var file = window.URL.createObjectURL(blob);
-                                window.location.assign(file);})
-                            .catch(error => console.log('error', error));
+
+                                const a = document.createElement('a');
+                                a.style.display = 'none';
+                                a.href = file;
+                                // the filename you want
+                                a.download = 'url-to-pdf.org.pdf';
+                                document.body.appendChild(a);
+                                a.click();
+                                window.URL.revokeObjectURL(url);
+
+                                loader.style.display = 'none';
+
+                            })
+                            .catch(error => {
+                                console.log('error', error)
+                                loader.style.display = 'none';
+                            });
                     } catch(err) {
                         console.error(`Error: ${err}`);
                     }
+                    // stop here
+
                 });
             </script>
         </div>
@@ -162,9 +191,34 @@
 
 {% block footer %}
 <footer>
-    <small class="subtext">
-        <a href="https://huhu.io">Huhu.io</a> © 2021
-    </small>
+    <!-- Buglog -->
+    <script>
+        (function(d, s) {
+            s = d.createElement('script');
+            s.src = 'https://api.buglog.io/website/NERMGGJR4J/code';
+            s.async = 1;
+            d.head.appendChild(s);
+        })(document);
+    </script>
+    <!-- End Buglog -->
+    <script type="text/javascript">
+        _linkedin_partner_id = "4896417";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+    (function(l) {
+        if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+            window.lintrk.q=[]}
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4896417&fmt=gif" />
+    </noscript>
+
 </footer>
 {% endblock footer %}
 </body>
