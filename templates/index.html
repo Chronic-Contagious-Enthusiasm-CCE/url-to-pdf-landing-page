@@ -103,7 +103,7 @@
                                 a.style.display = 'none';
                                 a.href = file;
                                 // the filename you want
-                                a.download = 'url-to-pdf.org.pdf';
+                                a.download = 'url-to-pdf.com.pdf';
                                 document.body.appendChild(a);
                                 a.click();
                                 window.URL.revokeObjectURL(url);
@@ -123,6 +123,21 @@
                 });
             </script>
         </div>
+        <br>
+        <button type="submit" id="rapid-api" style="height: 3rem;
+    width: 24rem;border-radius:5px"><a href="https://rapidapi.com/url-to-pdf-url-to-pdf-default/api/url-to-pdf/pricing" target="_blank">Start using the API for free!</a></button>
+        <script>
+            const button = document.getElementById('rapid-api');
+
+
+
+            button.addEventListener('click', async _ => {
+                window.open("https://rapidapi.com/url-to-pdf-url-to-pdf-default/api/url-to-pdf/pricing", '_blank').focus();
+                gtag('event', 'clicked_rapid_api_home', {});
+
+            });
+        </script>
+
     </section>
     <img class="hero-image" style="width: 50%" src="{{ get_url(path="juice.svg") }}">
 

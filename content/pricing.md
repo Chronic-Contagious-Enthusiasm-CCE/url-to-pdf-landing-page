@@ -9,9 +9,9 @@ weight = 3
 
 <table>
   <tr>
-    <td><h1>Free</h1></td>
-    <td><h1>Business</h1></td>
-    <td><h1>Scale</h1></td>
+    <td><h1>Basic</h1></td>
+    <td><h1>Pro</h1></td>
+    <td><h1>Ultra</h1></td>
   </tr>
   <tr>
     <td>1000 requests per month</td>
@@ -28,8 +28,8 @@ weight = 3
     <td></td>
 </tr>
     <tr>
-    <td><button>Get</button></td>
-    <td><button>Get</button></td>
-    <td><button>Get</button></td>
+    <td><button><a href="https://rapidapi.com/url-to-pdf-url-to-pdf-default/api/url-to-pdf/pricing" target="_blank">Get</a></button></td>
+    <td><button><a href="https://rapidapi.com/url-to-pdf-url-to-pdf-default/api/url-to-pdf/pricing" target="_blank">Get</a></button></td>
+    <td><button><a href="https://rapidapi.com/url-to-pdf-url-to-pdf-default/api/url-to-pdf/pricing" target="_blank">Get</a></button></td>
   </tr>
 </table>
